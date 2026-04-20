@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantumcortex"
+version = "0.1.0"
+description = "Quantum Neural Network Framework - Advanced quantum machine learning with VQC, QNN, and hybrid classical-quantum models"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "QuantumCortex Team", email = "team@quantumcortex.ai"}
+]
+keywords = ["quantum", "neural-network", "machine-learning", "variational-quantum-circuit", "qml", "quantum-computing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+qiskit = ["qiskit>=0.43.0", "qiskit-machine-learning>=0.6.0"]
+pennylane = ["pennylane>=0.30.0"]
+cirq = ["cirq>=1.0.0"]
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0", "black>=23.0.0", "mypy>=1.0.0"]
+all = ["qiskit>=0.43.0", "pennylane>=0.30.0", "cirq>=1.0.0", "pytest>=7.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/moggan1337/QuantumCortex"
+Documentation = "https://quantumcortex.readthedocs.io"
+Repository = "https://github.com/moggan1337/QuantumCortex"
+Issues = "https://github.com/moggan1337/QuantumCortex/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["quantumcortex*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
