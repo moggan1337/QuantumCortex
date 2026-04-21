@@ -14,6 +14,24 @@
 
 ---
 
+## 🎬 Demo
+![QuantumCortex Demo](demo.gif)
+
+*Quantum neural network framework*
+
+## Screenshots
+| Component | Preview |
+|-----------|---------|
+| Circuit Builder | ![circuit](screenshots/circuit-builder.png) |
+| Hybrid Model | ![hybrid](screenshots/hybrid-model.png) |
+| Training Progress | ![training](screenshots/training.png) |
+
+## Visual Description
+Circuit builder shows variational quantum circuits with gate placement. Hybrid model displays classical-quantum layer integration. Training progress shows loss convergence with quantum advantage.
+
+---
+
+
 ## Table of Contents
 
 1. [Overview](#overview)
